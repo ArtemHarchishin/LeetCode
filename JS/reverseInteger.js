@@ -34,6 +34,25 @@ var reverse = function (x) {
     return ~~res;
 };
 
+/**
+ * Another one from Solutions https://discuss.leetcode.com/topic/6104/my-accepted-15-lines-of-code-for-java/2
+ * @param x
+ * @returns {number}
+ */
+reverse = function (x) {
+    var result = 0,
+        tail,
+        newResult;
+    while (x !== 0) {
+        tail = x % 10;
+        newResult = ~~(result * 10 + tail);
+        if (~~((newResult - tail) / 10) !== result) return 0;
+        result = newResult;
+        x = ~~(x / 10);
+    }
+    return result;
+};
+
 console.log(reverse(123) === 321);
 console.log(reverse(-123) === -321);
 console.log(reverse(100000000000006) === 0);
