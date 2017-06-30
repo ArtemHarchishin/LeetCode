@@ -2,36 +2,9 @@
  * https://leetcode.com/problems/add-two-numbers/#/description
  */
 
-function createList(nums) {
-    var list = null,
-        root = null;
+'use strict';
 
-    for (var i = 0; i < nums.length; i++) {
-        if (list === null) {
-            list = root = new ListNode(nums[i]);
-        } else {
-            root.next = new ListNode(nums[i]);
-            root = root.next;
-        }
-    }
-    return list;
-}
-
-function ListNode(val) {
-    this.val = val;
-    this.next = null;
-
-    this.toString = function () {
-        var s = [];
-        s.push(this.val);
-        var cur = this.next;
-        while (cur !== null) {
-            s.push(cur.val);
-            cur = cur.next;
-        }
-        return s.join(" -> ");
-    }
-}
+require("./common");
 
 function addTwoNumbers(l1, l2) {
     var c1 = l1,
@@ -52,7 +25,9 @@ function addTwoNumbers(l1, l2) {
         d.next = new ListNode(sum % 10);
         d = d.next;
     }
-    if (~~(sum / 10) === 1) d.next = new ListNode(1);
+    if (~~(sum / 10) === 1) {
+        d.next = new ListNode(1);
+    }
     return sentinel.next;
 }
 

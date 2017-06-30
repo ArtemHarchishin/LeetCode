@@ -1,9 +1,14 @@
 /**
- * https://leetcode.com/problems/
- *
+ https://leetcode.com/problems/
  */
 
+'use strict';
+
 var replaceIt = function () {};
+
+/**
+ * Another one from Solutions
+ */
 
 var test = function () {
     return replaceIt(arguments);
